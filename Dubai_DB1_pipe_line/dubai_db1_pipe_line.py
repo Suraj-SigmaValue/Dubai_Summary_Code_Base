@@ -96,7 +96,7 @@ mapping = [
     ("sro_name", "sub_registrar_office_name"),
     ("document_no", "document_number"),
     ("procedure_name_en", "transaction_type"),
-    ("agreement_price", "agreement_price"),
+    ("actual_worth", "agreement_price"),
     ("market_value", "guideline_value"),
     ("property_description", "property_description"),
     ("instance_date", "transaction_date"),

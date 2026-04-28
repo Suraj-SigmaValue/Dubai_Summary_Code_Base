@@ -183,6 +183,13 @@ for col in columns_to_create:
 df_transaction['city_name'] = "Dubai"
 df_transaction['state_name'] = "Dubai"
 df_transaction['country_name'] = "United Arab Emirates"
+df_transaction['is_llm_processed'] = 'No'
+df_transaction['is_manual_processed'] = 'No'
+df_transaction['country_name'] = 'United Arab Emirates'
+df_transaction['source_accessibility_way'] = 'Download'
+df_transaction['source_accessibility'] = 'Easy'
+df_transaction['data_type'] = 'Registered Document'
+df_transaction['data_source'] = 'DLD'
 
 # ----------------------------------------------------------------------
 # 5. Save the processed dataframe (df) to CSV

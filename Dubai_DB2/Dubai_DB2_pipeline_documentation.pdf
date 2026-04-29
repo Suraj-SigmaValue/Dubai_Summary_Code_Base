@@ -1,0 +1,2183 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R 8 0 R 10 0 R 12 0 R 14 0 R 16 0 R 18 0 R] /Count 7 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Length 5126 >>
+stream
+0.86 0.92 0.98 rg
+0 750 612 42 re
+f
+0.047 0.243 0.529 RG
+1.1 w
+54 747 m 558 747 l
+S
+BT
+0.047 0.243 0.529 rg
+/F2 10 Tf
+54.00 764.00 Td
+(Dubai DB2 Pipeline Documentation) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 20 Tf
+54.00 730.00 Td
+(Dubai DB2 project pipeline column documentation) Tj
+ET
+0.047 0.243 0.529 RG
+1.3 w
+54 712.00 m 558 712.00 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 678.00 Td
+(Source files:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 665.50 Td
+(    Projects:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 653.00 Td
+(        D:\\Dubai\\Dubai_Updated_data\\Raw_Data\\Projects.csv) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 640.50 Td
+(    Units:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 628.00 Td
+(        D:\\Dubai\\Dubai_Updated_data\\Project_Unit_Summary\\Units_with_actual_area_sqft.csv) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 615.50 Td
+(    Buildings:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 603.00 Td
+(        D:\\Dubai\\Dubai_Updated_data\\Raw_Data\\Buildings.csv) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 590.50 Td
+(    Developers:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 578.00 Td
+(        D:\\Dubai\\Dubai_Updated_data\\Raw_Data\\Developers.csv) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 557.50 Td
+(This pipeline creates the DB2 project output by:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 545.00 Td
+(    1. Loading project-level records from Projects.csv.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 532.50 Td
+(    2. Aggregating unit-level data by project_id from Units_with_actual_area_sqft.csv.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 520.00 Td
+(    3. Creating date, unit-count, area, BHK, subtype, building, and developer) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 507.50 Td
+(       derived columns.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 495.00 Td
+(    4. Renaming/mapping those columns into the final DB2 schema.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 482.50 Td
+(    5. Creating DB2 schema columns that are not available from the raw sources) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 470.00 Td
+(       as blank/None columns in the final output.) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 442.50 Td
+(Project id normalization) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 434.50 m 558 434.50 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 421.50 Td
+(_pid_norm:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 409.00 Td
+(    Source: project_id.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 396.50 Td
+(    Logic: normalize_project_id removes numeric formatting differences so joins) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 384.00 Td
+(    work consistently. For example 123.0 becomes '123'. Blank or missing values) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 371.50 Td
+(    become None.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 359.00 Td
+(    Purpose: used as the merge key between project records and unit aggregates.) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 331.50 Td
+(Unit aggregation columns) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 323.50 m 558 323.50 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 310.50 Td
+(These columns are created from the Units file, grouped by normalized project_id.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 290.00 Td
+(units_rooms_en:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 277.50 Td
+(    Source: rooms_en.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 265.00 Td
+(    Logic: count each room label per project. Missing or blank room labels are) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 252.50 Td
+(    counted under 'NA'. Stored as a dictionary like {'1 B/R': 10, '2 B/R': 4}.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 232.00 Td
+(units_actual_area:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 219.50 Td
+(    Source: actual_area_sqft.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 207.00 Td
+(    Logic: count each actual area value per project. Numeric areas are formatted) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 194.50 Td
+(    to two decimals before counting. Missing or blank areas are counted as 'NA'.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 174.00 Td
+(units_property_sub_type_en:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 161.50 Td
+(    Source: property_sub_type_en.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 149.00 Td
+(    Logic: count each property subtype per project. Missing or blank subtypes) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 136.50 Td
+(    are counted as 'NA'.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 116.00 Td
+(units_project_name_en:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 103.50 Td
+(    Source: project_name_en from the Units file.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 91.00 Td
+(    Logic: keeps the first non-null English project name found for the project.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 70.50 Td
+(units_project_name_ar:) Tj
+ET
+0.42 0.42 0.42 RG
+0.5 w
+54 44 m 558 44 l
+S
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+54.00 30.00 Td
+(Generated from pipeline documentation) Tj
+ET
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+503.00 30.00 Td
+(Page 1 of 7) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 5 0 R >>
+endobj
+7 0 obj
+<< /Length 4991 >>
+stream
+0.86 0.92 0.98 rg
+0 750 612 42 re
+f
+0.047 0.243 0.529 RG
+1.1 w
+54 747 m 558 747 l
+S
+BT
+0.047 0.243 0.529 rg
+/F2 10 Tf
+54.00 764.00 Td
+(Dubai DB2 Pipeline Documentation) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 730.00 Td
+(    Source: project_name_ar from the Units file.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 717.50 Td
+(    Logic: keeps the first non-null Arabic project name found for the project.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 697.00 Td
+(unit_count:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 684.50 Td
+(    Source: Units rows.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 672.00 Td
+(    Logic: total number of unit records found for the project. Missing aggregate) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 659.50 Td
+(    values after merge are filled as 0 and converted to integer.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 639.00 Td
+(rooms_area_dict_raw:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 626.50 Td
+(    Source: rooms_en and actual_area_sqft.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 614.00 Td
+(    Logic: nested dictionary by room label and area value. It counts how many) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 601.50 Td
+(    units exist for each room/area pair. Missing rooms become 'NA'; missing) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 589.00 Td
+(    areas become 'NULL'.) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 561.50 Td
+(Date and quarter columns) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 553.50 m 558 553.50 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 540.50 Td
+(project_start_date, project_end_date:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 528.00 Td
+(    Source: raw project_start_date and project_end_date.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 515.50 Td
+(    Logic: converted to pandas datetime using format '%d-%m-%Y'. Invalid values) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 503.00 Td
+(    become NaT because errors='coerce' is used.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 482.50 Td
+(Start_Year:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 470.00 Td
+(    Source: project_start_date.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 457.50 Td
+(    Logic: extracts year as nullable Int64.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 437.00 Td
+(End_Year:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 424.50 Td
+(    Source: project_end_date.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 412.00 Td
+(    Logic: extracts year as nullable Int64.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 391.50 Td
+(Start_Quarter:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 379.00 Td
+(    Source: project_start_date.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 366.50 Td
+(    Logic: builds 'Q<quarter> <year>', for example 'Q1 2020'. Blank string is) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 354.00 Td
+(    used when the start date is missing or invalid.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 333.50 Td
+(End_Quarter:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 321.00 Td
+(    Source: project_end_date.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 308.50 Td
+(    Logic: builds 'Q<quarter> <year>'. Blank string is used when the end date is) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 296.00 Td
+(    missing or invalid.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 275.50 Td
+(Start_Quarter_Year:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 263.00 Td
+(    Source: project_start_date.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 250.50 Td
+(    Logic: pandas quarterly period version of the start date.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 230.00 Td
+(End_Quarter_Year:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 217.50 Td
+(    Source: project_end_date.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 205.00 Td
+(    Logic: pandas quarterly period version of the end date.) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 177.50 Td
+(Bedroom/unit category columns) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 169.50 m 558 169.50 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 156.50 Td
+(categorized_units:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 144.00 Td
+(    Source: units_rooms_en dictionary.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 131.50 Td
+(    Logic: categorize_units maps room labels into standard buckets:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 119.00 Td
+(        - '< 1 B/R' when room label contains 'SINGLE ROOM' or equals 'SINGLE'.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 106.50 Td
+(        - 'PENTHOUSE' when room label contains 'PENTHOUSE'.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 94.00 Td
+(        - 'Commercial' when room label contains GYM, HOTEL, KIOSK, OFFICE,) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 81.50 Td
+(          SHOP, or STUDIO.) Tj
+ET
+0.42 0.42 0.42 RG
+0.5 w
+54 44 m 558 44 l
+S
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+54.00 30.00 Td
+(Generated from pipeline documentation) Tj
+ET
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+503.00 30.00 Td
+(Page 2 of 7) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 7 0 R >>
+endobj
+9 0 obj
+<< /Length 5378 >>
+stream
+0.86 0.92 0.98 rg
+0 750 612 42 re
+f
+0.047 0.243 0.529 RG
+1.1 w
+54 747 m 558 747 l
+S
+BT
+0.047 0.243 0.529 rg
+/F2 10 Tf
+54.00 764.00 Td
+(Dubai DB2 Pipeline Documentation) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 730.00 Td
+(        - '1 B/R' through '5 B/R' when a bedroom count is parsed from labels) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 717.50 Td
+(          like 1 B/R, 2BR, or 3 BHK.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 705.00 Td
+(        - '> 5 B/R' when parsed bedroom count is greater than 5.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 692.50 Td
+(        - 'Other' when no rule matches.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 672.00 Td
+(< 1 B/R, 1 B/R, 2 B/R, 3 B/R, 4 B/R, 5 B/R, > 5 B/R, PENTHOUSE,) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 659.50 Td
+(Commercial, Other:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 647.00 Td
+(    Source: categorized_units.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 634.50 Td
+(    Logic: each standard bucket is expanded into its own integer count column.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 622.00 Td
+(    Missing buckets are filled as 0.) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 594.50 Td
+(Area columns) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 586.50 m 558 586.50 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 573.50 Td
+(units_actual_area_Cumulative:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 561.00 Td
+(    Source: units_actual_area dictionary.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 548.50 Td
+(    Logic: multiplies each area key by its unit count and sums the result.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 536.00 Td
+(    Non-numeric area keys are skipped. Result is rounded to 2 decimals.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 515.50 Td
+(rooms_area_dict:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 503.00 Td
+(    Source: rooms_area_dict_raw.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 490.50 Td
+(    Logic: JSON string version of the raw nested room/area/count dictionary.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 478.00 Td
+(    Empty dictionaries are written as '{}'.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 457.50 Td
+(rooms_area_dict_categorized:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 445.00 Td
+(    Source: rooms_area_dict_raw.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 432.50 Td
+(    Logic: room labels are normalized into internal buckets:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 420.00 Td
+(        lt_1_br, 1_br, 2_br, 3_br, 4_br, 5_br, gt_5_br, PENTHOUSE,) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 407.50 Td
+(        Commercial, Other.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 395.00 Td
+(    Area values are formatted to two decimals and counts are summed by bucket.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 382.50 Td
+(    The final value is stored as JSON.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 362.00 Td
+(carpet_area_<bucket> columns:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 349.50 Td
+(    Source: rooms_area_dict_categorized.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 337.00 Td
+(    Logic: for each bedroom/commercial bucket, area * count is summed. Dynamic) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 324.50 Td
+(    columns are created only for buckets present in the data, such as) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 312.00 Td
+(    carpet_area_1_br or carpet_area_Commercial.) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 284.50 Td
+(Property subtype columns) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 276.50 m 558 276.50 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 263.50 Td
+(Flat, Shop, Office, Other:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 251.00 Td
+(    Source: units_property_sub_type_en.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 238.50 Td
+(    Logic:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 226.00 Td
+(        - Flat includes FLAT, UNIT, BUILDING.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 213.50 Td
+(        - Shop includes SHOP, SHOW ROOMS, STORE.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 201.00 Td
+(        - Office includes CLINIC, OFFICE, WAREHOUSE, WORKSHOP.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 188.50 Td
+(        - Other includes every other subtype or unexpected value.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 176.00 Td
+(    Counts are summed into the four columns.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 155.50 Td
+(property_type_flag:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 143.00 Td
+(    Source: Flat, Shop, Office, Other counts.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 130.50 Td
+(    Logic:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 118.00 Td
+(        - 'Residential' when Flat > 0 and Shop/Office/Other are all 0.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 105.50 Td
+(        - 'Residential + Commercial' when Flat > 0 and any other category > 0.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 93.00 Td
+(        - 'Commercial' when Flat == 0 and any Shop/Office/Other category > 0.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 80.50 Td
+(        - 'NA' when no category has a positive count.) Tj
+ET
+0.42 0.42 0.42 RG
+0.5 w
+54 44 m 558 44 l
+S
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+54.00 30.00 Td
+(Generated from pipeline documentation) Tj
+ET
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+503.00 30.00 Td
+(Page 3 of 7) Tj
+ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 9 0 R >>
+endobj
+11 0 obj
+<< /Length 5566 >>
+stream
+0.86 0.92 0.98 rg
+0 750 612 42 re
+f
+0.047 0.243 0.529 RG
+1.1 w
+54 747 m 558 747 l
+S
+BT
+0.047 0.243 0.529 rg
+/F2 10 Tf
+54.00 764.00 Td
+(Dubai DB2 Pipeline Documentation) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 730.00 Td
+(    Final DB2 column: project_type.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 709.50 Td
+(subtype_actual_area_dict:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 697.00 Td
+(    Source: raw Units file grouped by project_id, property_sub_type_en, and) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 684.50 Td
+(    actual_area_sqft.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 672.00 Td
+(    Logic: sums actual_area_sqft by subtype. Missing or invalid areas are) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 659.50 Td
+(    counted in a '__NULL_COUNT__' entry instead of being added to area totals.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 647.00 Td
+(    Stored as JSON.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 626.50 Td
+(carpet_area_Flat, carpet_area_Shop, carpet_area_Office, carpet_area_Other:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 614.00 Td
+(    Source: subtype_actual_area_dict.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 601.50 Td
+(    Logic: sums subtype-level actual area into the same four property subtype) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 589.00 Td
+(    groups. '__NULL_COUNT__', 'NULL', and 'NA' keys are ignored.) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 561.50 Td
+(Building columns) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 553.50 m 558 553.50 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 540.50 Td
+(floor_list:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 528.00 Td
+(    Source: Buildings.csv floors grouped by project_id.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 515.50 Td
+(    Logic: converts building floors to numeric, fills missing as 0, rounds to) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 503.00 Td
+(    integer, and stores the list of floor counts per project.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 482.50 Td
+(building_data:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 470.00 Td
+(    Source: Buildings.csv project_id, building_number, shops, flats, offices.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 457.50 Td
+(    Logic: creates a JSON dictionary for each project with each building number) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 445.00 Td
+(    as a key and shops/flats/offices counts as values.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 424.50 Td
+(_building_floors_dict:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 412.00 Td
+(    Source: Buildings.csv building_number and floors.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 399.50 Td
+(    Logic: helper dictionary mapping each building number to its floors count.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 387.00 Td
+(    Used to build tower completion and sanctioned floor JSON columns.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 366.50 Td
+(carpet_wise_total_sold_units:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 354.00 Td
+(    Source: units_project_name_en and rooms_area_dict.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 341.50 Td
+(    Logic: builds JSON in the form {project_name: [[room_area_dict]]}. Each) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 329.00 Td
+(    area count is converted to [count, 0], where 0 represents unsold/booked) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 316.50 Td
+(    placeholder logic used by the existing downstream format.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 296.00 Td
+(bhk_wise_total_sold:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 283.50 Td
+(    Source: units_rooms_en.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 271.00 Td
+(    Logic: for each room label, creates {'total': count, 'sold': 0,) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 258.50 Td
+(    'unsold': count}. Stored as JSON.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 246.00 Td
+(    Final DB2 column: carpet_wise_total_booked_units.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 225.50 Td
+(commencement_date:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 213.00 Td
+(    Source: project_start_date and units_project_name_en.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 200.50 Td
+(    Logic: formats start date as dd/mm/yyyy and stores JSON) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 188.00 Td
+(    {project_name: [formatted_start_date]}. Missing date/name returns None.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 167.50 Td
+(final_proposed_date_of_compeletion:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 155.00 Td
+(    Source: project_end_date and units_project_name_en.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 142.50 Td
+(    Logic: formats end date as dd/mm/yyyy and stores JSON) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 130.00 Td
+(    {project_name: [formatted_end_date]}. Missing date/name returns None.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 117.50 Td
+(    Final DB2 column: final_proposed_date_of_completion.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 97.00 Td
+(project_wise_bhk_info:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 84.50 Td
+(    Source: rooms_area_dict and units_project_name_en.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 72.00 Td
+(    Logic: for each room type, calculates total unit count and weighted average) Tj
+ET
+0.42 0.42 0.42 RG
+0.5 w
+54 44 m 558 44 l
+S
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+54.00 30.00 Td
+(Generated from pipeline documentation) Tj
+ET
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+503.00 30.00 Td
+(Page 4 of 7) Tj
+ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 11 0 R >>
+endobj
+13 0 obj
+<< /Length 5736 >>
+stream
+0.86 0.92 0.98 rg
+0 750 612 42 re
+f
+0.047 0.243 0.529 RG
+1.1 w
+54 747 m 558 747 l
+S
+BT
+0.047 0.243 0.529 rg
+/F2 10 Tf
+54.00 764.00 Td
+(Dubai DB2 Pipeline Documentation) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 730.00 Td
+(    area. Stored as a project-keyed dictionary string.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 717.50 Td
+(    Final DB2 column: project_bhk_summary.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 697.00 Td
+(bhk_wise_ca:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 684.50 Td
+(    Source: rooms_area_dict and units_project_name_en.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 672.00 Td
+(    Logic: collects unique carpet area values per room type, lowercases room) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 659.50 Td
+(    labels, and stores a project-keyed JSON string.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 647.00 Td
+(    Final DB2 column: bhk_wise_carpet_area.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 626.50 Td
+(project_wise_commencement_quarter_and_total_units:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 614.00 Td
+(    Source: units_project_name_en, Start_Quarter, and unit_count.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 601.50 Td
+(    Logic: groups by project and Start_Quarter, sums unit_count, sorts quarters,) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 589.00 Td
+(    and stores JSON {project_name: [[quarter, total_units], ...]}.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 576.50 Td
+(    Note: quarter_sort_key expects 'Qn-yyyy', while Start_Quarter is built as) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 564.00 Td
+(    'Qn yyyy'. If the format does not match, the fallback sort key is used.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 551.50 Td
+(    Final DB2 column: project_commencement_quarter_units.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 531.00 Td
+(bhk_wise_min_max:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 518.50 Td
+(    Source: rooms_area_dict.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 506.00 Td
+(    Logic: for each room type, extracts numeric area keys and stores) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 493.50 Td
+(    [minimum_area, maximum_area] as JSON.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 481.00 Td
+(    Final DB2 column: bhk_wise_min_max_area.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 460.50 Td
+(Building_count:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 448.00 Td
+(    Source: building_data JSON.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 435.50 Td
+(    Logic: parses building_data and returns the number of top-level buildings.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 423.00 Td
+(    Invalid or blank JSON returns 0.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 410.50 Td
+(    Final DB2 column: total_building_count.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 390.00 Td
+(project_tower_completion_date:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 377.50 Td
+(    Source: units_project_name_en, completion_date, and _building_floors_dict.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 365.00 Td
+(    Logic: completion_date is parsed and formatted as dd-mm-yyyy. If project) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 352.50 Td
+(    name or building data is missing, an empty nested project JSON is returned.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 340.00 Td
+(    Otherwise each building number is assigned the same completion date.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 319.50 Td
+(number_of_sanctioned_floors:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 307.00 Td
+(    Source: units_project_name_en and _building_floors_dict.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 294.50 Td
+(    Logic: creates JSON {project_name: {building_number: floor_count}}.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 282.00 Td
+(    Missing project name returns '{}'; missing floors returns {project_name: {}}.) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 254.50 Td
+(Developer columns) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 246.50 m 558 246.50 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 233.50 Td
+(organization_individual:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 221.00 Td
+(    Source: Developers.csv legal_status_en mapped by developer_id.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 208.50 Td
+(    Logic: if Developers.csv exists and contains developer_id and) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 196.00 Td
+(    legal_status_en, the first developer_id in the project developer_id value is) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 183.50 Td
+(    used to look up legal_status_en. Otherwise value is None.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 171.00 Td
+(    Final DB2 column: organization_individual_name.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 150.50 Td
+(number_of_developers:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 138.00 Td
+(    Source: developer_id.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 125.50 Td
+(    Logic: splits developer_id by comma and counts the entries. Blank or NaN) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 113.00 Td
+(    values return 0.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 100.50 Td
+(    Note: the final mapping currently points from 'no_of_developers' to) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 88.00 Td
+(    'number_of_developers', while the derived column is named) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 75.50 Td
+(    'number_of_developers'. Because of that name mismatch, the final output) Tj
+ET
+0.42 0.42 0.42 RG
+0.5 w
+54 44 m 558 44 l
+S
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+54.00 30.00 Td
+(Generated from pipeline documentation) Tj
+ET
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+503.00 30.00 Td
+(Page 5 of 7) Tj
+ET
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 13 0 R >>
+endobj
+15 0 obj
+<< /Length 6688 >>
+stream
+0.86 0.92 0.98 rg
+0 750 612 42 re
+f
+0.047 0.243 0.529 RG
+1.1 w
+54 747 m 558 747 l
+S
+BT
+0.047 0.243 0.529 rg
+/F2 10 Tf
+54.00 764.00 Td
+(Dubai DB2 Pipeline Documentation) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 730.00 Td
+(    column is created as None unless a source column named no_of_developers) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 717.50 Td
+(    exists.) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 690.00 Td
+(Final DB2 mapped columns) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 682.00 m 558 682.00 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 669.00 Td
+(These output columns are created by the final mapping. When the source column is) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 656.50 Td
+(available, its values are copied/renamed. When the source is None or missing,) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 644.00 Td
+(the output column is created with None.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 623.50 Td
+(    index                                      <- project_number) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 611.00 Td
+(    registered_project_name                    <- units_project_name_en) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 598.50 Td
+(    project_name                               <- units_project_name_en) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 586.00 Td
+(    project_name_ar                            <- project_name before overwrite) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 573.50 Td
+(    location_name                              <- area_name_en) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 561.00 Td
+(    city_name                                  <- city_name, later fixed as Dubai) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 548.50 Td
+(    project_latitude                           <- Latitude) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 536.00 Td
+(    project_longitude                          <- Longitude) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 523.50 Td
+(    location_latitude                          <- area_latitude) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 511.00 Td
+(    location_longitude                         <- area_longitude) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 498.50 Td
+(    plot_number                                <- None) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 486.00 Td
+(    project_registration_id                    <- project_id) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 473.50 Td
+(    is_coordinate_manually_done                <- Geocode_Status) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 461.00 Td
+(    total_units                                <- unit_count) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 448.50 Td
+(    booked_units                               <- total_sold) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 436.00 Td
+(    commencement_date                          <- commencement_date) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 423.50 Td
+(    building_wise_total_booked_units           <- None) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 411.00 Td
+(    final_proposed_date_of_completion          <- final_proposed_date_of_compeletion) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 398.50 Td
+(    project_bhk_summary                        <- project_wise_bhk_info) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 386.00 Td
+(    project_commencement_quarter_units         <-) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 373.50 Td
+(      project_wise_commencement_quarter_and_total_units) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 361.00 Td
+(    organization_individual_name               <- organization_individual) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 348.50 Td
+(    number_of_developers                       <- no_of_developers) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 336.00 Td
+(    pincode                                    <- None) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 323.50 Td
+(    registered_project_count                   <- None) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 311.00 Td
+(    remark                                     <- None) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 298.50 Td
+(    total_fsi                                  <- None) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 286.00 Td
+(    total_plot_area_sq_m                       <- None) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 273.50 Td
+(    bhk_wise_min_max_area                      <- bhk_wise_min_max) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 261.00 Td
+(    bhk_wise_carpet_area                       <- bhk_wise_ca) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 248.50 Td
+(    project_type                               <- property_type_flag) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 236.00 Td
+(    bhk_wise_total_booked_units                <- None) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 223.50 Td
+(    carpet_wise_total_booked_units             <- bhk_wise_total_sold) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 211.00 Td
+(    total_building_count                       <- Building_count) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 198.50 Td
+(    project_tower_completion_date              <- project_tower_completion_date) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 186.00 Td
+(    number_of_sanctioned_floors                <- number_of_sanctioned_floors) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 173.50 Td
+(    amenity_profile                            <- amenity_profile) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 161.00 Td
+(    age_of_project                             <- age_of_project) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 148.50 Td
+(    construction_status                        <- construction_status) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 136.00 Td
+(    building_grade                             <- building_grade) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 123.50 Td
+(    zoning_type                                <- zoning_type) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 111.00 Td
+(    encumbrance_status                         <- encumbrance_status) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 98.50 Td
+(    country_name                               <- country_name, fixed value) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 86.00 Td
+(    state_name                                 <- state_name, fixed value) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 73.50 Td
+(    sub_locality                               <- sub_locality) Tj
+ET
+0.42 0.42 0.42 RG
+0.5 w
+54 44 m 558 44 l
+S
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+54.00 30.00 Td
+(Generated from pipeline documentation) Tj
+ET
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+503.00 30.00 Td
+(Page 6 of 7) Tj
+ET
+endstream
+endobj
+16 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 15 0 R >>
+endobj
+17 0 obj
+<< /Length 3670 >>
+stream
+0.86 0.92 0.98 rg
+0 750 612 42 re
+f
+0.047 0.243 0.529 RG
+1.1 w
+54 747 m 558 747 l
+S
+BT
+0.047 0.243 0.529 rg
+/F2 10 Tf
+54.00 764.00 Td
+(Dubai DB2 Pipeline Documentation) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 730.00 Td
+(    micro_market                               <- micro_market) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 717.50 Td
+(    frontage                                   <- frontage) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 705.00 Td
+(    approval_status                            <- approval_status) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 692.50 Td
+(    data_source                                <- data_source) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 680.00 Td
+(    source_accessibility                       <- source_accessibility, fixed value) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 667.50 Td
+(    source_accessibility_way                   <- source_accessibility_way, fixed value) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 655.00 Td
+(    sourcing_cost                              <- sourcing_cost) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 642.50 Td
+(    sourcing_time                              <- sourcing_time) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 630.00 Td
+(    rera_location_v1                           <- None) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 617.50 Td
+(    Old Rera Location                          <- None) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 605.00 Td
+(    Super Modified Project Name                <- None) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 592.50 Td
+(    Rera Location - v2                         <- None) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 565.00 Td
+(Fixed values applied before final output) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 557.00 m 558 557.00 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 544.00 Td
+(These columns are overwritten with constant values:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 531.50 Td
+(    city_name                 = 'Dubai') Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 519.00 Td
+(    state_name                = 'Dubai') Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 506.50 Td
+(    country_name              = 'United Arab Emirates') Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 494.00 Td
+(    source_accessibility      = 'Easy') Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 481.50 Td
+(    source_accessibility_way  = 'Mining') Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 454.00 Td
+(Explicit project-name preparation before mapping) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 446.00 m 558 446.00 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 433.00 Td
+(registered_project_name:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 420.50 Td
+(    Source: units_project_name_en.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 408.00 Td
+(    Logic: copied before final mapping.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 387.50 Td
+(project_name_ar:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 375.00 Td
+(    Source: project_name at that point in the dataframe.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 362.50 Td
+(    Logic: copied before project_name is overwritten.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 342.00 Td
+(project_name:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 329.50 Td
+(    Source: units_project_name_en.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 317.00 Td
+(    Logic: overwritten to the English project name from Units aggregation.) Tj
+ET
+0.42 0.42 0.42 RG
+0.5 w
+54 44 m 558 44 l
+S
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+54.00 30.00 Td
+(Generated from pipeline documentation) Tj
+ET
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+503.00 30.00 Td
+(Page 7 of 7) Tj
+ET
+endstream
+endobj
+18 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 17 0 R >>
+endobj
+xref
+0 19
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000162 00000 n 
+0000000232 00000 n 
+0000000307 00000 n 
+0000005485 00000 n 
+0000005621 00000 n 
+0000010664 00000 n 
+0000010800 00000 n 
+0000016230 00000 n 
+0000016367 00000 n 
+0000021986 00000 n 
+0000022124 00000 n 
+0000027913 00000 n 
+0000028051 00000 n 
+0000034792 00000 n 
+0000034930 00000 n 
+0000038653 00000 n 
+trailer
+<< /Size 19 /Root 1 0 R >>
+startxref
+38791
+%%EOF

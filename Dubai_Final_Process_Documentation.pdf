@@ -1,0 +1,1634 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R 8 0 R 10 0 R 12 0 R 14 0 R 16 0 R] /Count 6 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Length 4114 >>
+stream
+0.86 0.92 0.98 rg
+0 750 612 42 re
+f
+0.047 0.243 0.529 RG
+1.1 w
+54 747 m 558 747 l
+S
+BT
+0.047 0.243 0.529 rg
+/F2 10 Tf
+54.00 764.00 Td
+(Dubai Final Process Documentation) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 20 Tf
+54.00 730.00 Td
+(Dubai Final Process Documentation) Tj
+ET
+0.047 0.243 0.529 RG
+1.3 w
+54 712.00 m 558 712.00 l
+S
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 671.00 Td
+(Overall process) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 663.00 m 558 663.00 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 650.00 Td
+(The complete Dubai data process runs in four main stages.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 629.50 Td
+(Stage 1:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 617.00 Td
+(    Create DB1 transaction output separately.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 596.50 Td
+(Stage 2:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 584.00 Td
+(    Create DB2 project output separately.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 563.50 Td
+(Stage 3:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 551.00 Td
+(    After DB1 and DB2 are created, run the latitude and longitude enrichment) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 538.50 Td
+(    process. This process reads both DB files, extracts unique project/location) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 526.00 Td
+(    combinations, fetches coordinates using geopy, and writes the coordinates) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 513.50 Td
+(    back into both DB files.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 493.00 Td
+(Stage 4:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 480.50 Td
+(    Run the checklist process. The checklist creates an Excel analysis report) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 468.00 Td
+(    and validates DB1 or DB2 against the respective schema file.) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 440.50 Td
+(Folder structure) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 432.50 m 558 432.50 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 419.50 Td
+(DB1 pipeline folder:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 407.00 Td
+(    D:\\Dubai Data\\Dubai_DB1_pipe_line) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 386.50 Td
+(DB2 pipeline folder:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 374.00 Td
+(    D:\\Dubai Data\\Dubai_DB2) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 353.50 Td
+(Latitude/longitude pipeline folder:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 341.00 Td
+(    D:\\Dubai Data\\Lan_lont_PipeLine) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 320.50 Td
+(Checklist folder:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 308.00 Td
+(    D:\\Dubai Data\\CheckList) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 287.50 Td
+(Main final documentation:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 275.00 Td
+(    D:\\Dubai Data\\Dubai_Final_Process_Documentation.pdf) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 247.50 Td
+(Stage 1: DB1 creation) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 239.50 m 558 239.50 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 226.50 Td
+(Script:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 214.00 Td
+(    D:\\Dubai Data\\Dubai_DB1_pipe_line\\dubai_db1_pipe_line.py) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 193.50 Td
+(Purpose:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 181.00 Td
+(    Creates DB1 transaction-level data from raw Dubai transaction records.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 160.50 Td
+(Main input:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 148.00 Td
+(    D:\\Dubai\\Dubai_Updated_data\\Raw_Data\\Transactions.csv) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 127.50 Td
+(Main output:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 115.00 Td
+(    Dubai_DB1 output CSV file.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 94.50 Td
+(Important output columns for latitude/longitude enrichment:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 82.00 Td
+(    index) Tj
+ET
+0.42 0.42 0.42 RG
+0.5 w
+54 44 m 558 44 l
+S
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+54.00 30.00 Td
+(Generated from Dubai final process workflow) Tj
+ET
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+503.00 30.00 Td
+(Page 1 of 6) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 5 0 R >>
+endobj
+7 0 obj
+<< /Length 4685 >>
+stream
+0.86 0.92 0.98 rg
+0 750 612 42 re
+f
+0.047 0.243 0.529 RG
+1.1 w
+54 747 m 558 747 l
+S
+BT
+0.047 0.243 0.529 rg
+/F2 10 Tf
+54.00 764.00 Td
+(Dubai Final Process Documentation) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 730.00 Td
+(    project_name) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 717.50 Td
+(    location_name) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 705.00 Td
+(    project_latitude) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 692.50 Td
+(    project_longitude) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 680.00 Td
+(    location_latitude) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 667.50 Td
+(    location_longitude) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 647.00 Td
+(Notes:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 634.50 Td
+(    The DB1 script already creates the latitude and longitude columns. They are) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 622.00 Td
+(    initially blank and are filled later by the latitude/longitude pipeline.) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 594.50 Td
+(Stage 2: DB2 creation) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 586.50 m 558 586.50 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 573.50 Td
+(Script:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 561.00 Td
+(    D:\\Dubai Data\\Dubai_DB2\\generate_db2_pipeline.py) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 540.50 Td
+(Purpose:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 528.00 Td
+(    Creates DB2 project-level data from Projects, Units, Buildings, and) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 515.50 Td
+(    Developers source files.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 495.00 Td
+(Main inputs:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 482.50 Td
+(    D:\\Dubai\\Dubai_Updated_data\\Raw_Data\\Projects.csv) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 470.00 Td
+(    D:\\Dubai\\Dubai_Updated_data\\Project_Unit_Summary\\Units_with_actual_area_sqft.csv) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 457.50 Td
+(    D:\\Dubai\\Dubai_Updated_data\\Raw_Data\\Buildings.csv) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 445.00 Td
+(    D:\\Dubai\\Dubai_Updated_data\\Raw_Data\\Developers.csv) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 424.50 Td
+(Main output:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 412.00 Td
+(    Dubai_DB2 output Excel file.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 391.50 Td
+(Important output columns for latitude/longitude enrichment:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 379.00 Td
+(    index) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 366.50 Td
+(    project_name) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 354.00 Td
+(    location_name) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 341.50 Td
+(    project_latitude) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 329.00 Td
+(    project_longitude) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 316.50 Td
+(    location_latitude) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 304.00 Td
+(    location_longitude) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 283.50 Td
+(Notes:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 271.00 Td
+(    The DB2 script also keeps latitude and longitude columns in the output. They) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 258.50 Td
+(    are filled after DB2 is created by the latitude/longitude pipeline.) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 231.00 Td
+(Stage 3: Latitude and longitude enrichment) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 223.00 m 558 223.00 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 210.00 Td
+(Script:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 197.50 Td
+(    D:\\Dubai Data\\Lan_lont_PipeLine\\lat_long.py) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 177.00 Td
+(Purpose:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 164.50 Td
+(    Fetch project and location coordinates for unique project/location records) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 152.00 Td
+(    found in both DB1 and DB2, then assign those coordinates back into both DBs.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 131.50 Td
+(Default DB files:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 119.00 Td
+(    DB1 = D:\\Dubai\\Dubai_DB1_test.csv) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 106.50 Td
+(    DB2 = D:\\Dubai\\Dubai_DB2_test.xlsx) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 86.00 Td
+(Customizable paths:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 73.50 Td
+(    The paths are defined at the top of lat_long.py:) Tj
+ET
+0.42 0.42 0.42 RG
+0.5 w
+54 44 m 558 44 l
+S
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+54.00 30.00 Td
+(Generated from Dubai final process workflow) Tj
+ET
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+503.00 30.00 Td
+(Page 2 of 6) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 7 0 R >>
+endobj
+9 0 obj
+<< /Length 4519 >>
+stream
+0.86 0.92 0.98 rg
+0 750 612 42 re
+f
+0.047 0.243 0.529 RG
+1.1 w
+54 747 m 558 747 l
+S
+BT
+0.047 0.243 0.529 rg
+/F2 10 Tf
+54.00 764.00 Td
+(Dubai Final Process Documentation) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 730.00 Td
+(        DB1_PATH = Path\(r"D:\\Dubai\\Dubai_DB1_test.csv"\)) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 717.50 Td
+(        DB2_PATH = Path\(r"D:\\Dubai\\Dubai_DB2_test.xlsx"\)) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 697.00 Td
+(    To run the same logic on another file, change these two path values or call:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 684.50 Td
+(        run_lat_long_pipeline\(db1_path, db2_path\)) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 657.00 Td
+(Step 3.1: Read DB1 and DB2) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 649.00 m 558 649.00 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 636.00 Td
+(DB1 is read as CSV.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 623.50 Td
+(DB2 is read as Excel.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 603.00 Td
+(The pipeline expects both files to contain:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 590.50 Td
+(    index) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 578.00 Td
+(    project_name) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 565.50 Td
+(    location_name) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 545.00 Td
+(The pipeline also expects or creates these output columns:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 532.50 Td
+(    project_latitude) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 520.00 Td
+(    project_longitude) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 507.50 Td
+(    location_latitude) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 495.00 Td
+(    location_longitude) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 467.50 Td
+(Step 3.2: Fetch unique project/location records) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 459.50 m 558 459.50 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 446.50 Td
+(The pipeline selects these columns from both DB files:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 434.00 Td
+(    index) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 421.50 Td
+(    project_name) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 409.00 Td
+(    location_name) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 388.50 Td
+(It combines DB1 and DB2 records into one dataframe.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 368.00 Td
+(First uniqueness step:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 355.50 Td
+(    Duplicate rows are removed using index, project_name, and location_name.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 335.00 Td
+(Second uniqueness step:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 322.50 Td
+(    Duplicate records are removed using index only, because index is treated as) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 310.00 Td
+(    the unique project key.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 289.50 Td
+(Temporary unique file:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 277.00 Td
+(    D:\\Dubai Data\\Lan_lont_PipeLine\\temp_unique_projects.csv) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 256.50 Td
+(This file contains the unique index, project_name, and location_name values that) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 244.00 Td
+(will be used for coordinate fetching.) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 216.50 Td
+(Step 3.3: Fetch latitude and longitude using geopy) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 208.50 m 558 208.50 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 195.50 Td
+(Library used:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 183.00 Td
+(    geopy) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 162.50 Td
+(Geocoder used:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 150.00 Td
+(    Nominatim) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 129.50 Td
+(Rate limiting:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 117.00 Td
+(    The script uses geopy RateLimiter to avoid sending requests too quickly.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 96.50 Td
+(Project coordinate search:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 84.00 Td
+(    The project search includes both project_name and location_name because this) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 71.50 Td
+(    improves the chance of finding the correct Dubai project.) Tj
+ET
+0.42 0.42 0.42 RG
+0.5 w
+54 44 m 558 44 l
+S
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+54.00 30.00 Td
+(Generated from Dubai final process workflow) Tj
+ET
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+503.00 30.00 Td
+(Page 3 of 6) Tj
+ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 9 0 R >>
+endobj
+11 0 obj
+<< /Length 4501 >>
+stream
+0.86 0.92 0.98 rg
+0 750 612 42 re
+f
+0.047 0.243 0.529 RG
+1.1 w
+54 747 m 558 747 l
+S
+BT
+0.047 0.243 0.529 rg
+/F2 10 Tf
+54.00 764.00 Td
+(Dubai Final Process Documentation) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 722.00 Td
+(Example project search patterns:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 709.50 Td
+(    project_name, location_name, Dubai, United Arab Emirates) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 697.00 Td
+(    project_name location_name, Dubai, UAE) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 684.50 Td
+(    project_name, Dubai, United Arab Emirates) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 664.00 Td
+(Location coordinate search:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 651.50 Td
+(    The location search uses location_name with Dubai/UAE context.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 631.00 Td
+(Example location search patterns:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 618.50 Td
+(    location_name, Dubai, United Arab Emirates) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 606.00 Td
+(    location_name, Dubai, UAE) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 585.50 Td
+(Coordinate result file:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 573.00 Td
+(    D:\\Dubai Data\\Lan_lont_PipeLine\\coordinates_results.csv) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 552.50 Td
+(This file stores:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 540.00 Td
+(    index) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 527.50 Td
+(    index_key) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 515.00 Td
+(    project_name) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 502.50 Td
+(    location_name) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 490.00 Td
+(    project_latitude) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 477.50 Td
+(    project_longitude) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 465.00 Td
+(    location_latitude) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 452.50 Td
+(    location_longitude) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 440.00 Td
+(    project_search_query) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 427.50 Td
+(    location_search_query) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 407.00 Td
+(Resume behavior:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 394.50 Td
+(    If coordinates_results.csv already exists, the script skips indexes already) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 382.00 Td
+(    present in that file and only fetches missing coordinates.) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 354.50 Td
+(Step 3.4: Assign coordinates back to DB1 and DB2) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 346.50 m 558 346.50 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 333.50 Td
+(The script assigns coordinates back to both files using normalized index matching.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 313.00 Td
+(Columns updated in DB1:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 300.50 Td
+(    project_latitude) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 288.00 Td
+(    project_longitude) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 275.50 Td
+(    location_latitude) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 263.00 Td
+(    location_longitude) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 242.50 Td
+(Columns updated in DB2:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 230.00 Td
+(    project_latitude) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 217.50 Td
+(    project_longitude) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 205.00 Td
+(    location_latitude) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 192.50 Td
+(    location_longitude) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 172.00 Td
+(Backup files:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 159.50 Td
+(    Before overwriting the original DB files, the script creates backup files:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 147.00 Td
+(        Dubai_DB1_test_before_lat_long.csv) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 134.50 Td
+(        Dubai_DB2_test_before_lat_long.xlsx) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 114.00 Td
+(Updated files:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 101.50 Td
+(    D:\\Dubai\\Dubai_DB1_test.csv) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 89.00 Td
+(    D:\\Dubai\\Dubai_DB2_test.xlsx) Tj
+ET
+0.42 0.42 0.42 RG
+0.5 w
+54 44 m 558 44 l
+S
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+54.00 30.00 Td
+(Generated from Dubai final process workflow) Tj
+ET
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+503.00 30.00 Td
+(Page 4 of 6) Tj
+ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 11 0 R >>
+endobj
+13 0 obj
+<< /Length 4370 >>
+stream
+0.86 0.92 0.98 rg
+0 750 612 42 re
+f
+0.047 0.243 0.529 RG
+1.1 w
+54 747 m 558 747 l
+S
+BT
+0.047 0.243 0.529 rg
+/F2 10 Tf
+54.00 764.00 Td
+(Dubai Final Process Documentation) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 723.00 Td
+(How to run latitude/longitude pipeline) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 715.00 m 558 715.00 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 702.00 Td
+(Command:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 689.50 Td
+(    python D:\\Dubai Data\\Lan_lont_PipeLine\\lat_long.py) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 669.00 Td
+(Alternative from Python:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 656.50 Td
+(    from Lan_lont_PipeLine.lat_long import run_lat_long_pipeline) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 636.00 Td
+(    run_lat_long_pipeline\() Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 623.50 Td
+(        db1_path=r"D:\\Dubai\\Dubai_DB1_test.csv",) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 611.00 Td
+(        db2_path=r"D:\\Dubai\\Dubai_DB2_test.xlsx") Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 598.50 Td
+(    \)) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 571.00 Td
+(Important geopy note) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 563.00 m 558 563.00 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 550.00 Td
+(Nominatim is a public geocoding service. It should be used with a clear user) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 537.50 Td
+(agent and rate limiting. For very large files, coordinate fetching can take time) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 525.00 Td
+(because the script intentionally slows down requests.) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 497.50 Td
+(Stage 4: Checklist validation) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 489.50 m 558 489.50 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 476.50 Td
+(Script:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 464.00 Td
+(    D:\\Dubai Data\\CheckList\\db_checklist.py) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 443.50 Td
+(Purpose:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 431.00 Td
+(    Creates a report for the generated DB file and validates the uploaded file) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 418.50 Td
+(    against the matching schema.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 398.00 Td
+(DB1 schema:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 385.50 Td
+(    D:\\Dubai Data\\CheckList\\DB1_Schema.xlsx) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 365.00 Td
+(DB2 schema:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 352.50 Td
+(    D:\\Dubai Data\\CheckList\\DB2_Schema.xlsx) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 332.00 Td
+(DB1 validation columns:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 319.50 Td
+(    DB1\(Transaction DB\)-Actual) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 307.00 Td
+(    Data_Type) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 286.50 Td
+(DB2 validation columns:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 274.00 Td
+(    DB2\(Project_DB\)-Actual) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 261.50 Td
+(    Data_Type) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 241.00 Td
+(Automatic schema detection:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 228.50 Td
+(    If the uploaded filename contains DB1, DB1_Schema.xlsx is used.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 216.00 Td
+(    If the uploaded filename contains DB2, DB2_Schema.xlsx is used.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 195.50 Td
+(Checklist report sheets:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 183.00 Td
+(    Column Analysis) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 170.50 Td
+(    Summary) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 158.00 Td
+(    First 10 Rows Sample) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 145.50 Td
+(    Schema Validation) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 118.00 Td
+(Recommended final run order) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 110.00 m 558 110.00 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 97.00 Td
+(1. Run DB1 pipeline:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 84.50 Td
+(       python D:\\Dubai Data\\Dubai_DB1_pipe_line\\dubai_db1_pipe_line.py) Tj
+ET
+0.42 0.42 0.42 RG
+0.5 w
+54 44 m 558 44 l
+S
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+54.00 30.00 Td
+(Generated from Dubai final process workflow) Tj
+ET
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+503.00 30.00 Td
+(Page 5 of 6) Tj
+ET
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 13 0 R >>
+endobj
+15 0 obj
+<< /Length 1844 >>
+stream
+0.86 0.92 0.98 rg
+0 750 612 42 re
+f
+0.047 0.243 0.529 RG
+1.1 w
+54 747 m 558 747 l
+S
+BT
+0.047 0.243 0.529 rg
+/F2 10 Tf
+54.00 764.00 Td
+(Dubai Final Process Documentation) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 730.00 Td
+(2. Run DB2 pipeline:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 717.50 Td
+(       python D:\\Dubai Data\\Dubai_DB2\\generate_db2_pipeline.py) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 697.00 Td
+(3. Run latitude/longitude enrichment:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 684.50 Td
+(       python D:\\Dubai Data\\Lan_lont_PipeLine\\lat_long.py) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 664.00 Td
+(4. Run checklist validation:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 651.50 Td
+(       python D:\\Dubai Data\\CheckList\\db_checklist.py) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 624.00 Td
+(Final expected outcome) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 616.00 m 558 616.00 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 603.00 Td
+(After all stages are complete:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 590.50 Td
+(    DB1 contains transaction data with project/location coordinates filled.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 578.00 Td
+(    DB2 contains project data with project/location coordinates filled.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 565.50 Td
+(    A checklist Excel report validates column completeness and data types.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 553.00 Td
+(    Documentation PDFs are available for DB1, DB2, checklist, and the full final) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 540.50 Td
+(    process.) Tj
+ET
+0.42 0.42 0.42 RG
+0.5 w
+54 44 m 558 44 l
+S
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+54.00 30.00 Td
+(Generated from Dubai final process workflow) Tj
+ET
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+503.00 30.00 Td
+(Page 6 of 6) Tj
+ET
+endstream
+endobj
+16 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 15 0 R >>
+endobj
+xref
+0 17
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000155 00000 n 
+0000000225 00000 n 
+0000000300 00000 n 
+0000004466 00000 n 
+0000004602 00000 n 
+0000009339 00000 n 
+0000009475 00000 n 
+0000014046 00000 n 
+0000014183 00000 n 
+0000018737 00000 n 
+0000018875 00000 n 
+0000023298 00000 n 
+0000023436 00000 n 
+0000025333 00000 n 
+trailer
+<< /Size 17 /Root 1 0 R >>
+startxref
+25471
+%%EOF

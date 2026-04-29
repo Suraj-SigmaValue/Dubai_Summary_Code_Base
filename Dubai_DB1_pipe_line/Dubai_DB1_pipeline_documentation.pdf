@@ -1,0 +1,1090 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R 8 0 R 10 0 R 12 0 R] /Count 4 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Length 5102 >>
+stream
+0.86 0.92 0.98 rg
+0 750 612 42 re
+f
+0.047 0.243 0.529 RG
+1.1 w
+54 747 m 558 747 l
+S
+BT
+0.047 0.243 0.529 rg
+/F2 10 Tf
+54.00 764.00 Td
+(Dubai DB1 Pipeline Documentation) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 20 Tf
+54.00 730.00 Td
+(Dubai DB1 transaction pipeline column documentation) Tj
+ET
+0.047 0.243 0.529 RG
+1.3 w
+54 712.00 m 558 712.00 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 678.00 Td
+(Source file:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 665.50 Td
+(    D:\\Dubai\\Dubai_Updated_data\\Raw_Data\\Transactions.csv) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 645.00 Td
+(This pipeline creates the DB1 transaction output by:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 632.50 Td
+(    1. Reading raw Dubai transaction records.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 620.00 Td
+(    2. Deriving date and property classification columns.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 607.50 Td
+(    3. Renaming raw columns to the expected DB1 column names.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 595.00 Td
+(    4. Creating missing DB1 schema columns with default values.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 582.50 Td
+(    5. Reordering selected important columns at the front of the output.) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 555.00 Td
+(Derived columns and applied logic) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 547.00 m 558 547.00 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 534.00 Td
+(instance_date:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 521.50 Td
+(    Source: raw instance_date.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 509.00 Td
+(    Logic: converted from string to pandas datetime using format '%d-%m-%Y'.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 496.50 Td
+(    Invalid dates are converted to NaT because errors='coerce' is used.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 476.00 Td
+(year:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 463.50 Td
+(    Source: instance_date after datetime conversion.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 451.00 Td
+(    Logic: extracts the calendar year using instance_date.dt.year.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 438.50 Td
+(    Stored as pandas nullable integer Int64 so missing dates remain <NA>) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 426.00 Td
+(    instead of becoming float values.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 405.50 Td
+(quarter_num:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 393.00 Td
+(    Source: instance_date after datetime conversion.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 380.50 Td
+(    Logic: extracts quarter number 1, 2, 3, or 4 using instance_date.dt.quarter.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 368.00 Td
+(    Stored as nullable integer Int64.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 355.50 Td
+(    Note: this is an intermediate helper column and is not included in the) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 343.00 Td
+(    rename mapping.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 322.50 Td
+(quarter:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 310.00 Td
+(    Source: quarter_num and year.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 297.50 Td
+(    Logic: concatenates values into 'Q<quarter_num>-<year>', for example) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 285.00 Td
+(    'Q4-2006'. If instance_date is invalid or missing, quarter is set to None) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 272.50 Td
+(    to avoid values like 'Q<NA>-<NA>'.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 252.00 Td
+(property_type:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 239.50 Td
+(    Source: property_sub_type_en.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 227.00 Td
+(    Logic:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 214.50 Td
+(        - Flat if property_sub_type_en is one of:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 202.00 Td
+(          Flat, Villa, Stacked Townhouses, Unit.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 189.50 Td
+(        - Shop if property_sub_type_en is one of:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 177.00 Td
+(          Shop, Store, Show Rooms.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 164.50 Td
+(        - Office if property_sub_type_en is one of:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 152.00 Td
+(          Office, Clinic, Workshop, Warehouse.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 139.50 Td
+(        - Others for every other value, including the values listed in the) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 127.00 Td
+(          others set and any unexpected or missing subtype.) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 99.50 Td
+(Renamed DB1 columns) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 91.50 m 558 91.50 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 78.50 Td
+(These columns are created by renaming raw source columns. No calculation is) Tj
+ET
+0.42 0.42 0.42 RG
+0.5 w
+54 44 m 558 44 l
+S
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+54.00 30.00 Td
+(Generated from pipeline documentation) Tj
+ET
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+503.00 30.00 Td
+(Page 1 of 4) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 5 0 R >>
+endobj
+7 0 obj
+<< /Length 6439 >>
+stream
+0.86 0.92 0.98 rg
+0 750 612 42 re
+f
+0.047 0.243 0.529 RG
+1.1 w
+54 747 m 558 747 l
+S
+BT
+0.047 0.243 0.529 rg
+/F2 10 Tf
+54.00 764.00 Td
+(Dubai DB1 Pipeline Documentation) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 730.00 Td
+(applied except where the source column itself was already derived earlier.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 709.50 Td
+(    project_id                         <- proj_id) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 697.00 Td
+(    index                              <- project_number) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 684.50 Td
+(    project_name                       <- project_name_en) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 672.00 Td
+(    village_name_marathi               <- village_mr) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 659.50 Td
+(    location_id                        <- loc_id) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 647.00 Td
+(    location_name                      <- area_name_en) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 634.50 Td
+(    location_name_ar                   <- area_name_ar) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 622.00 Td
+(    village_name                       <- igr_village) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 609.50 Td
+(    year                               <- year, derived from instance_date) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 597.00 Td
+(    quarter                            <- quarter, derived from instance_date) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 584.50 Td
+(    city_id                            <- city_id) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 572.00 Td
+(    city_name                          <- city, later overwritten as 'Dubai') Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 559.50 Td
+(    document_number                    <- transaction_id and document_no) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 547.00 Td
+(    sub_registrar_office_code          <- sro_code) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 534.50 Td
+(    sub_registrar_office_name          <- sro_name) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 522.00 Td
+(    transaction_type                   <- procedure_name_en) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 509.50 Td
+(    agreement_price                    <- actual_worth) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 497.00 Td
+(    guideline_value                    <- market_value) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 484.50 Td
+(    property_description               <- property_description) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 472.00 Td
+(    transaction_date                   <- instance_date) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 459.50 Td
+(    floor_number                       <- floor_no) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 447.00 Td
+(    unit_number                        <- unit_no) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 434.50 Td
+(    net_carpet_area_sq_m               <- procedure_area) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 422.00 Td
+(    balcony_sq_m                       <- balcony_sqmt) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 409.50 Td
+(    terrace_sq_m                       <- terrace_sqmt) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 397.00 Td
+(    seller_name                        <- seller_name) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 384.50 Td
+(    buyer_name                         <- purchaser_name) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 372.00 Td
+(    transaction_category               <- property_category and trans_group_en) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 359.50 Td
+(    internal_document_number           <- internaldocumentnumber) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 347.00 Td
+(    micr_number                        <- micrno) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 334.50 Td
+(    bank_type                          <- bank_type) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 322.00 Td
+(    party_code                         <- party_code) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 309.50 Td
+(    date_of_agreement_execution        <- dateofexecution) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 297.00 Td
+(    stamp_duty_paid                    <- stampdutypaid) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 284.50 Td
+(    registration_fee                   <- registrationfees) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 272.00 Td
+(    property_type_raw                  <- property_sub_type_en) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 259.50 Td
+(    unit_configuration                 <- rooms_en) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 247.00 Td
+(    unit_configuration_ar              <- rooms_ar) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 234.50 Td
+(    buyer_pincode                      <- buyer_pincode) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 222.00 Td
+(    buyer_locality                     <- locality_of_buyer) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 209.50 Td
+(    buyer_district                     <- district) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 197.00 Td
+(    buyer_state                        <- statename) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 184.50 Td
+(    tower_name                         <- building_name_en) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 172.00 Td
+(    tower_name_ar                      <- building_name_ar) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 159.50 Td
+(    gross_carpet_area_sq_ft            <- gross_carpet_sqft) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 147.00 Td
+(    price_per_sq_ft_gross_carpet       <- rate_on_gca_sqft) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 134.50 Td
+(    is_duplicate                       <- is_duplicate) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 122.00 Td
+(    sale_type                          <- primary_sale_or_secondary_sale) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 109.50 Td
+(    project_type                       <- project_type) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 89.00 Td
+(Important note about duplicate target names:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 76.50 Td
+(    document_number appears twice in the mapping:) Tj
+ET
+0.42 0.42 0.42 RG
+0.5 w
+54 44 m 558 44 l
+S
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+54.00 30.00 Td
+(Generated from pipeline documentation) Tj
+ET
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+503.00 30.00 Td
+(Page 2 of 4) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 7 0 R >>
+endobj
+9 0 obj
+<< /Length 5042 >>
+stream
+0.86 0.92 0.98 rg
+0 750 612 42 re
+f
+0.047 0.243 0.529 RG
+1.1 w
+54 747 m 558 747 l
+S
+BT
+0.047 0.243 0.529 rg
+/F2 10 Tf
+54.00 764.00 Td
+(Dubai DB1 Pipeline Documentation) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 730.00 Td
+(        transaction_id -> document_number) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 717.50 Td
+(        document_no    -> document_number) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 705.00 Td
+(    transaction_category also appears twice:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 692.50 Td
+(        property_category -> transaction_category) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 680.00 Td
+(        trans_group_en    -> transaction_category) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 667.50 Td
+(    pandas rename will allow duplicate column names if both source columns are) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 655.00 Td
+(    present. The pipeline does not currently choose one source over the other.) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 627.50 Td
+(Columns created with null/default values) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 619.50 m 558 619.50 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 606.50 Td
+(These expected DB1 columns do not come from the raw source in this script. They) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 594.00 Td
+(are first created as None if missing:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 573.50 Td
+(    project_latitude) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 561.00 Td
+(    project_longitude) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 548.50 Td
+(    location_latitude) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 536.00 Td
+(    location_longitude) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 523.50 Td
+(    is_llm_processed) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 511.00 Td
+(    is_manual_processed) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 498.50 Td
+(    country_name) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 486.00 Td
+(    state_name) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 473.50 Td
+(    micro_market) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 461.00 Td
+(    sub_locality) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 448.50 Td
+(    pincode) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 436.00 Td
+(    parking_count) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 423.50 Td
+(    facing_direction) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 411.00 Td
+(    view_type) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 398.50 Td
+(    furnishing_status) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 386.00 Td
+(    condition_status) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 373.50 Td
+(    source_accessibility) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 361.00 Td
+(    source_accessibility_way) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 348.50 Td
+(    sourcing_cost) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 336.00 Td
+(    sourcing_time) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 323.50 Td
+(    data_type) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 311.00 Td
+(    data_source) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 290.50 Td
+(After creation, these columns are overwritten with fixed values:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 278.00 Td
+(    city_name                 = 'Dubai') Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 265.50 Td
+(    state_name                = 'Dubai') Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 253.00 Td
+(    country_name              = 'United Arab Emirates') Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 240.50 Td
+(    is_llm_processed          = 'No') Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 228.00 Td
+(    is_manual_processed       = 'No') Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 215.50 Td
+(    source_accessibility_way  = 'Download') Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 203.00 Td
+(    source_accessibility      = 'Easy') Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 190.50 Td
+(    data_type                 = 'Registered Document') Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 178.00 Td
+(    data_source               = 'DLD') Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 157.50 Td
+(Columns that remain None unless populated elsewhere:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 145.00 Td
+(    project_latitude, project_longitude, location_latitude,) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 132.50 Td
+(    location_longitude, micro_market, sub_locality, pincode, parking_count,) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 120.00 Td
+(    facing_direction, view_type, furnishing_status, condition_status,) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 107.50 Td
+(    sourcing_cost, sourcing_time.) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 80.00 Td
+(Output order logic) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 72.00 m 558 72.00 l
+S
+0.42 0.42 0.42 RG
+0.5 w
+54 44 m 558 44 l
+S
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+54.00 30.00 Td
+(Generated from pipeline documentation) Tj
+ET
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+503.00 30.00 Td
+(Page 3 of 4) Tj
+ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 9 0 R >>
+endobj
+11 0 obj
+<< /Length 1012 >>
+stream
+0.86 0.92 0.98 rg
+0 750 612 42 re
+f
+0.047 0.243 0.529 RG
+1.1 w
+54 747 m 558 747 l
+S
+BT
+0.047 0.243 0.529 rg
+/F2 10 Tf
+54.00 764.00 Td
+(Dubai DB1 Pipeline Documentation) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 730.00 Td
+(The pipeline moves the following columns to the front if they exist:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 717.50 Td
+(    index, project_name, project_name_ar, quarter, year, location_name,) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 705.00 Td
+(    location_name_ar, city_name, property_type, project_latitude,) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 692.50 Td
+(    project_longitude, location_latitude, location_longitude.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 680.00 Td
+(All other columns keep their existing order after these priority columns.) Tj
+ET
+0.42 0.42 0.42 RG
+0.5 w
+54 44 m 558 44 l
+S
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+54.00 30.00 Td
+(Generated from pipeline documentation) Tj
+ET
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+503.00 30.00 Td
+(Page 4 of 4) Tj
+ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 11 0 R >>
+endobj
+xref
+0 13
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000141 00000 n 
+0000000211 00000 n 
+0000000286 00000 n 
+0000005440 00000 n 
+0000005576 00000 n 
+0000012067 00000 n 
+0000012203 00000 n 
+0000017297 00000 n 
+0000017434 00000 n 
+0000018499 00000 n 
+trailer
+<< /Size 13 /Root 1 0 R >>
+startxref
+18637
+%%EOF

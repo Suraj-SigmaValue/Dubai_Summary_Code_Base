@@ -1,0 +1,1265 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R 8 0 R 10 0 R 12 0 R 14 0 R] /Count 5 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Length 4152 >>
+stream
+0.86 0.92 0.98 rg
+0 750 612 42 re
+f
+0.047 0.243 0.529 RG
+1.1 w
+54 747 m 558 747 l
+S
+BT
+0.047 0.243 0.529 rg
+/F2 10 Tf
+54.00 764.00 Td
+(Dubai DB Checklist Documentation) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 20 Tf
+54.00 730.00 Td
+(Dubai DB Checklist Documentation) Tj
+ET
+0.047 0.243 0.529 RG
+1.3 w
+54 712.00 m 558 712.00 l
+S
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 671.00 Td
+(Purpose) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 663.00 m 558 663.00 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 650.00 Td
+(The checklist script validates a Dubai DB output file and creates an Excel report.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 637.50 Td
+(It keeps the existing column-analysis report and adds schema validation so DB1 and) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 625.00 Td
+(DB2 output files can be checked against their respective schema workbooks.) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 597.50 Td
+(Main script) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 589.50 m 558 589.50 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 576.50 Td
+(File:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 564.00 Td
+(    D:\\Dubai Data\\CheckList\\db_checklist.py) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 543.50 Td
+(Primary function:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 531.00 Td
+(    analyze_excel_file\(input_file, output_file=None, schema_file=None\)) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 503.50 Td
+(Supported input files) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 495.50 m 558 495.50 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 482.50 Td
+(The script supports both CSV and Excel files.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 462.00 Td
+(CSV input:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 449.50 Td
+(    Files ending with .csv are read using pandas read_csv.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 429.00 Td
+(Excel input:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 416.50 Td
+(    Files ending with .xlsx or .xls are read using pandas read_excel from the) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 404.00 Td
+(    first sheet.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 383.50 Td
+(Unsupported input:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 371.00 Td
+(    Any other file extension raises an unsupported file type error.) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 343.50 Td
+(Schema files) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 335.50 m 558 335.50 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 322.50 Td
+(DB1 schema:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 310.00 Td
+(    D:\\Dubai Data\\CheckList\\DB1_Schema.xlsx) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 289.50 Td
+(DB2 schema:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 277.00 Td
+(    D:\\Dubai Data\\CheckList\\DB2_Schema.xlsx) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 256.50 Td
+(DB1 schema columns used:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 244.00 Td
+(    DB1\(Transaction DB\)-Actual) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 231.50 Td
+(    Data_Type) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 211.00 Td
+(DB2 schema columns used:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 198.50 Td
+(    DB2\(Project_DB\)-Actual) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 186.00 Td
+(    Data_Type) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 158.50 Td
+(Automatic schema selection) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 150.50 m 558 150.50 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 137.50 Td
+(The checklist detects which schema to use from the uploaded file name.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 117.00 Td
+(DB1 detection:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 104.50 Td
+(    If the input filename contains DB1, the script validates against DB1_Schema.xlsx.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 84.00 Td
+(DB2 detection:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 71.50 Td
+(    If the input filename contains DB2, the script validates against DB2_Schema.xlsx.) Tj
+ET
+0.42 0.42 0.42 RG
+0.5 w
+54 44 m 558 44 l
+S
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+54.00 30.00 Td
+(Generated from checklist workflow) Tj
+ET
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+503.00 30.00 Td
+(Page 1 of 5) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 5 0 R >>
+endobj
+7 0 obj
+<< /Length 4638 >>
+stream
+0.86 0.92 0.98 rg
+0 750 612 42 re
+f
+0.047 0.243 0.529 RG
+1.1 w
+54 747 m 558 747 l
+S
+BT
+0.047 0.243 0.529 rg
+/F2 10 Tf
+54.00 764.00 Td
+(Dubai DB Checklist Documentation) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 722.00 Td
+(Manual schema selection:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 709.50 Td
+(    A schema_file path can be passed to analyze_excel_file when a specific schema) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 697.00 Td
+(    should be used regardless of automatic detection.) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 669.50 Td
+(Column presence validation) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 661.50 m 558 661.50 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 648.50 Td
+(For every expected column listed in the schema actual-column field, the script) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 636.00 Td
+(checks whether the same column exists in the uploaded file.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 615.50 Td
+(Pass:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 603.00 Td
+(    The expected schema column exists in the uploaded file.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 582.50 Td
+(Fail:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 570.00 Td
+(    The expected schema column is missing from the uploaded file.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 549.50 Td
+(Extra:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 537.00 Td
+(    The uploaded file contains a column that does not exist in the schema.) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 509.50 Td
+(Data type validation) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 501.50 m 558 501.50 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 488.50 Td
+(The script validates each present uploaded column against the schema Data_Type.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 468.00 Td
+(INTEGER:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 455.50 Td
+(    Passes when the pandas dtype is integer or the non-null values are numeric) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 443.00 Td
+(    whole numbers. For example, 10.0 can pass as integer-like when every value is) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 430.50 Td
+(    whole-number compatible.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 410.00 Td
+(DECIMAL:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 397.50 Td
+(    Passes when all non-null values can be converted to numeric decimal values.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 377.00 Td
+(VARCHAR and TEXT:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 364.50 Td
+(    Pass when the pandas dtype is object or string.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 344.00 Td
+(DATE:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 331.50 Td
+(    Passes when the pandas dtype is datetime or at least 90 percent of non-null) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 319.00 Td
+(    values can be parsed as dates. The script tries both normal date parsing and) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 306.50 Td
+(    day-first parsing.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 286.00 Td
+(Unknown:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 273.50 Td
+(    If a column is present but all values are null, the data type result is marked) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 261.00 Td
+(    Unknown because there is no value available to prove or disprove the expected) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 248.50 Td
+(    data type.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 228.00 Td
+(Unsupported schema type:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 215.50 Td
+(    If the schema contains a Data_Type outside the supported types, the data type) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 203.00 Td
+(    result is marked Unknown with an issue message.) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 175.50 Td
+(Generated Excel report) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 167.50 m 558 167.50 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 154.50 Td
+(The output report is an Excel workbook. If output_file is not supplied, the script) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 142.00 Td
+(creates the report name automatically using the input file stem plus) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 129.50 Td
+(_analysis_report.xlsx.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 109.00 Td
+(Example:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 96.50 Td
+(    Dubai_DB1.csv becomes Dubai_DB1_analysis_report.xlsx.) Tj
+ET
+0.42 0.42 0.42 RG
+0.5 w
+54 44 m 558 44 l
+S
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+54.00 30.00 Td
+(Generated from checklist workflow) Tj
+ET
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+503.00 30.00 Td
+(Page 2 of 5) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 7 0 R >>
+endobj
+9 0 obj
+<< /Length 4371 >>
+stream
+0.86 0.92 0.98 rg
+0 750 612 42 re
+f
+0.047 0.243 0.529 RG
+1.1 w
+54 747 m 558 747 l
+S
+BT
+0.047 0.243 0.529 rg
+/F2 10 Tf
+54.00 764.00 Td
+(Dubai DB Checklist Documentation) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 723.00 Td
+(Report sheet: Column Analysis) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 715.00 m 558 715.00 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 702.00 Td
+(This sheet contains one row per uploaded column.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 681.50 Td
+(Columns included:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 669.00 Td
+(    Column Name) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 656.50 Td
+(    Data Type) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 644.00 Td
+(    Total Values) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 631.50 Td
+(    Non-Null Count) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 619.00 Td
+(    Null Count) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 606.50 Td
+(    Null Percentage) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 594.00 Td
+(    Unique Values) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 581.50 Td
+(    Sample Values \(first 3\)) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 561.00 Td
+(Logic:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 548.50 Td
+(    The script calculates completeness, uniqueness, pandas dtype, and sample) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 536.00 Td
+(    values for every uploaded column.) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 508.50 Td
+(Report sheet: Summary) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 500.50 m 558 500.50 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 487.50 Td
+(This sheet contains high-level metrics for the uploaded file and schema validation.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 467.00 Td
+(Metrics included:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 454.50 Td
+(    Total Rows) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 442.00 Td
+(    Total Columns) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 429.50 Td
+(    Total Memory Usage \(MB\)) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 417.00 Td
+(    Columns with Null Values) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 404.50 Td
+(    Columns with 100% Null Values) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 392.00 Td
+(    Numeric Columns) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 379.50 Td
+(    Text/Object Columns) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 367.00 Td
+(    Date/Time Columns) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 354.50 Td
+(    Schema Expected Columns) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 342.00 Td
+(    Schema Missing Columns) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 329.50 Td
+(    Schema Extra Uploaded Columns) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 317.00 Td
+(    Schema Data Type Failures) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 289.50 Td
+(Report sheet: First 10 Rows Sample) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 281.50 m 558 281.50 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 268.50 Td
+(This sheet contains the first 10 rows from the uploaded file with an added) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 256.00 Td
+(Row_Number column.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 235.50 Td
+(Purpose:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 223.00 Td
+(    It helps quickly inspect whether the file loaded correctly and whether column) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 210.50 Td
+(    values look reasonable.) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 183.00 Td
+(Report sheet: Schema Validation) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 175.00 m 558 175.00 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 162.00 Td
+(This sheet contains the DB1 or DB2 schema validation output.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 141.50 Td
+(Columns included:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 129.00 Td
+(    Validation Type) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 116.50 Td
+(    Schema) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 104.00 Td
+(    Schema Column) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 91.50 Td
+(    Expected Data Type) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 79.00 Td
+(    Uploaded Column) Tj
+ET
+0.42 0.42 0.42 RG
+0.5 w
+54 44 m 558 44 l
+S
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+54.00 30.00 Td
+(Generated from checklist workflow) Tj
+ET
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+503.00 30.00 Td
+(Page 3 of 5) Tj
+ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 9 0 R >>
+endobj
+11 0 obj
+<< /Length 4520 >>
+stream
+0.86 0.92 0.98 rg
+0 750 612 42 re
+f
+0.047 0.243 0.529 RG
+1.1 w
+54 747 m 558 747 l
+S
+BT
+0.047 0.243 0.529 rg
+/F2 10 Tf
+54.00 764.00 Td
+(Dubai DB Checklist Documentation) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 730.00 Td
+(    Column Present) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 717.50 Td
+(    Actual Data Type) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 705.00 Td
+(    Data Type Result) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 692.50 Td
+(    Issue) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 672.00 Td
+(Validation Type values:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 659.50 Td
+(    Expected Column) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 647.00 Td
+(    Extra Uploaded Column) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 634.50 Td
+(    Schema Detection) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 622.00 Td
+(    Schema File) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 609.50 Td
+(    Schema Columns) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 589.00 Td
+(Column Present values:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 576.50 Td
+(    Pass) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 564.00 Td
+(    Fail) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 551.50 Td
+(    Extra) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 539.00 Td
+(    Unknown) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 518.50 Td
+(Data Type Result values:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 506.00 Td
+(    Pass) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 493.50 Td
+(    Fail) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 481.00 Td
+(    Skipped) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 468.50 Td
+(    Unknown) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 441.00 Td
+(Typical usage) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 433.00 m 558 433.00 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 420.00 Td
+(Run the script directly:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 407.50 Td
+(    python CheckList\\db_checklist.py) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 387.00 Td
+(Analyze a DB1 file with automatic schema detection:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 374.50 Td
+(    analyze_excel_file\(r"D:\\Dubai\\Dubai_DB1.csv"\)) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 354.00 Td
+(Analyze a DB2 file with automatic schema detection:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 341.50 Td
+(    analyze_excel_file\(r"D:\\Dubai\\Dubai_DB2.xlsx"\)) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 321.00 Td
+(Analyze with an explicit schema file:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 308.50 Td
+(    analyze_excel_file\() Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 296.00 Td
+(        r"D:\\Dubai\\Dubai_DB1.csv",) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 283.50 Td
+(        schema_file=r"D:\\Dubai Data\\CheckList\\DB1_Schema.xlsx") Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 271.00 Td
+(    \)) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 250.50 Td
+(Analyze with a custom report output name:) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 238.00 Td
+(    analyze_excel_file\() Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 225.50 Td
+(        r"D:\\Dubai\\Dubai_DB1.csv",) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 213.00 Td
+(        output_file=r"D:\\Dubai Data\\CheckList\\Dubai_DB1_custom_report.xlsx") Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 200.50 Td
+(    \)) Tj
+ET
+BT
+0.047 0.243 0.529 rg
+/F2 13 Tf
+54.00 173.00 Td
+(Important notes) Tj
+ET
+0.047 0.243 0.529 RG
+0.6 w
+54 165.00 m 558 165.00 l
+S
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 152.00 Td
+(The schema actual-column names must exactly match the uploaded file column names.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 139.50 Td
+(The validation is case-sensitive because pandas column matching is case-sensitive.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 119.00 Td
+(The checklist does not modify the uploaded DB1 or DB2 file. It only reads the file) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 106.50 Td
+(and writes a separate Excel analysis report.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 86.00 Td
+(The checklist report is intended to complement the DB1 and DB2 pipeline outputs.) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 73.50 Td
+(It checks structure, completeness, and data type compatibility, but it does not) Tj
+ET
+0.42 0.42 0.42 RG
+0.5 w
+54 44 m 558 44 l
+S
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+54.00 30.00 Td
+(Generated from checklist workflow) Tj
+ET
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+503.00 30.00 Td
+(Page 4 of 5) Tj
+ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 11 0 R >>
+endobj
+13 0 obj
+<< /Length 593 >>
+stream
+0.86 0.92 0.98 rg
+0 750 612 42 re
+f
+0.047 0.243 0.529 RG
+1.1 w
+54 747 m 558 747 l
+S
+BT
+0.047 0.243 0.529 rg
+/F2 10 Tf
+54.00 764.00 Td
+(Dubai DB Checklist Documentation) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 730.00 Td
+(validate business rules such as whether a value is logically correct for a Dubai) Tj
+ET
+BT
+0.085 0.085 0.085 rg
+/F1 9.5 Tf
+54.00 717.50 Td
+(project or transaction.) Tj
+ET
+0.42 0.42 0.42 RG
+0.5 w
+54 44 m 558 44 l
+S
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+54.00 30.00 Td
+(Generated from checklist workflow) Tj
+ET
+BT
+0.42 0.42 0.42 rg
+/F1 9 Tf
+503.00 30.00 Td
+(Page 5 of 5) Tj
+ET
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 13 0 R >>
+endobj
+xref
+0 15
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000148 00000 n 
+0000000218 00000 n 
+0000000293 00000 n 
+0000004497 00000 n 
+0000004633 00000 n 
+0000009323 00000 n 
+0000009459 00000 n 
+0000013882 00000 n 
+0000014019 00000 n 
+0000018592 00000 n 
+0000018730 00000 n 
+0000019375 00000 n 
+trailer
+<< /Size 15 /Root 1 0 R >>
+startxref
+19513
+%%EOF
